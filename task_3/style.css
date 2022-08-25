@@ -1,0 +1,13 @@
+.wrap{ 
+    margin: 100px;    
+}
+
+.btn{ 
+    height: 50px;
+    width: 120px;
+    border-radius: 8px;
+    background-color: rgb(21, 167, 77);
+    color: aliceblue;
+    font-size: medium;
+    cursor: pointer;
+}
