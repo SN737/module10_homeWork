@@ -15,8 +15,7 @@ input.addEventListener('input', () => {
 
 
 btnSend.addEventListener('click', ()=>{
-  if (!input.value) {
-    
+  if (!input.value) {    
     return;
     }else { 
       createMessage(input.value);}
@@ -25,16 +24,16 @@ btnSend.addEventListener('click', ()=>{
 
 function createMessage(textMsg){
     const outMsg =document.createElement('div');
-    outMsg.textContent = 'отправленная мессага' + textMsg;
+    outMsg.textContent = textMsg;
     outMsg.classList.add('outMsg');
     messages.append(outMsg);
     sendMsg(textMsg);
 
 }
 
-function recievMessage(){
+function recievMessage(text){
   const inMsg =document.createElement('div');
-    inMsg.textContent = 'полученная мессага';
+    inMsg.textContent = text;
     inMsg.classList.add('inMsg');
     messages.append(inMsg);
 

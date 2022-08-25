@@ -29,13 +29,14 @@
 .chat{
     display: flex;
     flex-direction: column;
-    border-color: aqua;
+    border-color: rgba(117, 8, 241, 0.306);
     border-style: outset;
-    border-width: 3px;
+    border-width: 7px;
     background-color: rgba(246, 219, 248, 0.384);
     border-radius: 10px;
     height: 600px;
     width: 470px;
+    background-image: -webkit-linear-gradient( -110deg, #ee82ee12, #ff000049);
 }
 
 .chatheader{
@@ -57,6 +58,8 @@
 .messagearea{
     margin: 2px;
     
+    
+    
     padding: 3px;
     display: flex;
     flex-direction: column;
@@ -68,6 +71,7 @@
     align-self: flex-end;
     width: 135px;
     height: 45px;
+    
 }
 
 .inMsg{
