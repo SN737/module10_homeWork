@@ -37,6 +37,7 @@
     height: 600px;
     width: 470px;
     background-image: -webkit-linear-gradient( -110deg, #ee82ee12, #ff000049);
+    
 }
 
 .chatheader{
@@ -52,12 +53,15 @@
     border-style: outset;
     border-width: 1px;
     width: 205px;  
-    padding-left: 3px; 
+    padding-left: 5px; 
+    
     
 }
 .messagearea{
     margin: 2px;
-    
+    overflow-y: auto;
+    flex-grow: unset;
+    height: 600px;
     
     
     padding: 3px;
@@ -71,14 +75,41 @@
     align-self: flex-end;
     width: 135px;
     height: 45px;
+    flex-shrink: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
 }
 
 .inMsg{
     background-color: rgba(133, 93, 244, 0.405);
     border-radius: 15px;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
     align-self: flex-start;
     width: 135px;
     height: 45px;
+}
+
+.text{
+    align-self: center;
+}
+
+.indgreen{
+    margin: 3px;
+    background-color: green;
+    width: 8px;
+    height: 8px;
+    border-radius: 50px;
+}
+
+
+.indred{
+    margin: 3px;
+    background-color: red;
+    width: 8px;
+    height: 8px;
+    border-radius: 50px;
 }
