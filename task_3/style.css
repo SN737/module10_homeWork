@@ -1,3 +1,9 @@
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	}
+
 .wrap{ 
     margin: 100px;    
 }
@@ -10,4 +16,36 @@
     color: aliceblue;
     font-size: medium;
     cursor: pointer;
+    margin: 3px;
+}
+
+.chat{
+    display: flex;
+    flex-direction: column;
+    border-color: aqua;
+    border-style: outset;
+    border-width: 3px;
+    background-color: rgba(131, 241, 131, 0.384);
+    border-radius: 10px;
+    height: 600px;
+    width: 470px;
+}
+
+.chatheader{
+    background-color: aquamarine;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.inputarea{
+    height: 50px;
+    border-radius: 8px;
+    margin-bottom: 5px; 
+    width: 200px;  
+    padding-left: 3px; 
+}
+.messagearea{
+    margin: 2px;
+    background-color: darkkhaki;
+    padding: 3px;
 }
