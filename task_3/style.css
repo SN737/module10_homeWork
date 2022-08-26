@@ -18,6 +18,10 @@
     margin: 3px;
 }
 
+::-webkit-input-placeholder{
+    color:lightgrey
+}
+
 .btn--send{
     background-color: rgba(70, 28, 236, 0.55);
 }
@@ -32,11 +36,12 @@
     border-color: rgba(117, 8, 241, 0.306);
     border-style: outset;
     border-width: 7px;
-    background-color: rgba(246, 219, 248, 0.384);
+    /* background-color: rgba(246, 219, 248, 0.384); */
     border-radius: 10px;
     height: 600px;
     width: 470px;
-    background-image: -webkit-linear-gradient( -110deg, #ee82ee12, #ff000049);
+    /* background-image: -webkit-linear-gradient( -110deg, #ee82ee12, #ff000049); */
+    background-image: -webkit-linear-gradient( -110deg, #887e8812, #ff000049);
     
 }
 
@@ -64,9 +69,7 @@
     margin: 2px;
     overflow-y: auto;
     flex-grow: unset;
-    height: 600px;
-    
-    
+    height: 600px;    
     padding: 3px;
     display: flex;
     flex-direction: column;
@@ -95,6 +98,7 @@
 
 .text{
     align-self: center;
+    margin: 3px;
 }
 
 .indicator{

@@ -19,8 +19,8 @@ btnSend.addEventListener('click', ()=>{
 
 // создаём сообщение с текстом из инпута и вызываем ф-ю отправки.
 function createMessage(textMsg){
-    const outMsg =document.createElement('div');
-    outMsg.textContent = textMsg;
+    const outMsg =document.createElement('div');    
+    outMsg.innerHTML = `<div class = "text">${textMsg}</div>`;
     outMsg.classList.add('outMsg', 'msg');
     messages.append(outMsg);
     sendMsg(textMsg);
