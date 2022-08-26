@@ -5,7 +5,7 @@
 	}
 
 .wrap{ 
-    margin: 100px;    
+    margin: 50px;    
 }
 
 .btn{ 
@@ -41,9 +41,12 @@
 }
 
 .chatheader{
-    background-image: -webkit-linear-gradient( -110deg, #ee82ee22, #ff000068);
+    /* background-image: -webkit-linear-gradient( -110deg, #4c06bb56, #eb096b76); */
+    /* background-image: -webkit-linear-gradient( -110deg, #ee82ee22, #ff000068); */
     border-radius: 10px;
     margin: 2px;
+    border-style: outset;
+    border-width: 1px;
 }
 
 .inputfield{
@@ -71,33 +74,30 @@
 
 .outMsg{
     background-color: rgb(241, 127, 241);
-    border-radius: 15px;    
     align-self: flex-end;
-    width: 135px;
-    height: 45px;
-    flex-shrink: unset;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+    flex-shrink: unset;         
 }
 
 .inMsg{
     background-color: rgba(133, 93, 244, 0.405);
+    align-self: flex-start;  
+}
+
+.msg{
     border-radius: 15px;
     display: flex;
+    min-width: 135px;
+    min-height: 45px;
     align-items: center;
     justify-content: center;
-    align-self: flex-start;
-    width: 135px;
-    height: 45px;
+    margin-bottom: 3px;
 }
 
 .text{
     align-self: center;
 }
 
-.indgreen{
+.indicator{
     margin: 3px;
     background-color: green;
     width: 8px;
@@ -106,10 +106,14 @@
 }
 
 
-.indred{
-    margin: 3px;
-    background-color: red;
-    width: 8px;
-    height: 8px;
-    border-radius: 50px;
+.indred{    
+    background-color: red; 
+    cursor: pointer;  
+}
+
+.footer {
+    background-color: rgba(153, 50, 204, 0.148);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;    
 }

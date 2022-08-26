@@ -4,7 +4,7 @@ const btnGeo = document.querySelector('.btn--geo');
 const input = document.querySelector('.inputfield');
 const messages = document.querySelector('.messagearea');
 const footer = document.querySelector('.footer');
-const indicator = document.createElement('div');
+
 let websocket;
 document.addEventListener('DOMContentLoaded', riseConnection);
 
@@ -27,32 +27,32 @@ btnSend.addEventListener('click', ()=>{
 function createMessage(textMsg){
     const outMsg =document.createElement('div');
     outMsg.textContent = textMsg;
-    outMsg.classList.add('outMsg');
+    outMsg.classList.add('outMsg', 'msg');
     messages.append(outMsg);
     sendMsg(textMsg);
-
 }
 
 function recievMessage(text){
   const inMsg =document.createElement('div');
     inMsg.innerHTML = `<div class = "text">${text}</div>`;
-    inMsg.classList.add('inMsg');
+    inMsg.classList.add('inMsg','msg');
     messages.append(inMsg);
-
 }
-
 
   function riseConnection(){
   websocket = new WebSocket(url); 
   websocket.onopen = ()=>{ 
-    const indicator = document.createElement('div');
-    indicator.classList.add('indgreen');
+    const indicatorText = document.createElement('span');
+    indicatorText.classList.add('indicatortext');
+    footer.append(indicatorText);
+    indicatorText.innerHTML = 'connected';
+    const indicator = document.createElement('div');    
+    indicator.classList.add('indicator');    
     footer.append(indicator);
-
     console.log("CONNECTED");
-    input.disabled = false;
-    
+    input.disabled = false;    
   };
+
     websocket.onmessage = (e) => {
       recievMessage(e.data);
     }; 
@@ -61,17 +61,17 @@ function recievMessage(text){
       console.log("DISCONNECTED");
       input.disabled = true;
       btnSend.disabled = true;
+      let  indicatorText  = document.querySelector('.indicatortext');
+      indicatorText.innerHTML = 'disconnected';
+      const indicator = document.querySelector('.indicator');
       indicator.classList.toggle('indred');
-    };        
-}; 
-    
-//   websocket.onerror = function(evt) {
-//     console.log(
-//       '<span style="color: red;">ERROR:</span> ' + evt.data
-//     );
-//   };
-// };
-
+      indicator.addEventListener('click', ()=> {
+        indicator.remove();
+        indicatorText.remove();
+        riseConnection();
+      });
+    };       
+}
 
 async function sendMsg(textMsg){
   await websocket.send(textMsg);
@@ -81,8 +81,7 @@ async function sendMsg(textMsg){
 btnGeo.addEventListener('click', () => {   
   if (!navigator.geolocation) {
     createMessage ('не поддерживается');
-  } else {
-    
+  } else {    
     navigator.geolocation.getCurrentPosition(success, error);
   }
 });
@@ -96,6 +95,5 @@ const success = (position) => {
   const latitude  = position.coords.latitude;
   const longitude = position.coords.longitude;
 
-  createMessage(`https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`);
-  
+  createMessage(`https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`);  
 };
